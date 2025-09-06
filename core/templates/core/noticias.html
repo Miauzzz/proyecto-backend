@@ -1,0 +1,61 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+<style>
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--backgroundcolor);
+    width: 100%;
+}
+
+    .contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--backgroundcolor);
+        width: 100%;
+    }
+
+        .hero-card {
+            color: white;
+            margin: 20px;
+        }
+
+            .hero-card h1{
+                color: white;
+            }
+
+</style>
+
+<main class="contenedor">
+    <section class="contenido">
+        <div class="hero-card" class="row justify-content-center">
+            <h1>Noticias</h1>
+            <p>Aqui encontrarás las últimas noticias y actualizaciones sobre ciberseguridad.</p>
+        </div>
+    </section>
+    <hr style="border-color: white; width: 50%;">
+    <section class="container-fluid">
+        <div class="row mx-auto" style="max-width: 1200px;">
+            {% for noticia in noticias %}
+                <div class="col-12 col-md-6 mb-4 d-flex justify-content-center">
+                    <article class="p-3 rounded shadow w-100" style="background-color: #00000080; color: white;">
+                        <h4>{{ noticia.titulo }}</h4>
+                        {% if noticia.imagen_url %}
+                            <img src="{{ noticia.imagen_url }}" alt="Imagen de la noticia" class="img-fluid mb-2 rounded">
+                        {% endif %}
+                        <div>{{ noticia.contenido }}</div>
+                        <p class="text-black"><em>Publicado el {{ noticia.fecha_publicacion }}</em></p>
+                    </article>
+                </div>
+            {% empty %}
+                <p class="text-center">No hay noticias disponibles en este momento.</p>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+<style>
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(83, 83, 83);
+}
+
+.contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--backgroundcolor);
+    width: 100%;
+}
+
+.hero-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+    width: 100%;
+}
+
+    .hero-card h1{
+        color: white;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-card p {
+        margin: 10px auto;
+        width: 45%;
+        max-width: 100%;
+        min-width: 300px;
+        box-sizing: border-box;
+        text-align: left;
+        display: block;
+        color: white;
+    }
+
+    .hero-card img{
+        width: clamp(300px, 50vw, 700px);
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto 10px;
+    }
+</style>
+
+<main class="contenedor">
+    <section class="contenido">
+        <div class="hero-card">
+            {% for inicio in inicio %}
+            {% if inicio.imagen_url %}
+                
+                <img src="{{ inicio.imagen_url }}" alt="Imagen de Inicio" style="z-index: 10;">
+            {% endif %}
+                <h1>{{ inicio.titulo }}</h1>
+                <hr style="border-color: white; width: 50%;">
+                <p>{{ inicio.descripcion }}</p>
+
+            {% empty %}
+                <p>Imagen no disponible.br</p><br>
+                <h1>Bienvenido a nuestro sitio web</h1>
+                <p>No hay contenido disponible en este momento.</p>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+
+{% endblock %}

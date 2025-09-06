@@ -1,0 +1,57 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+<style>
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(83, 83, 83);
+}
+    .contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--backgroundcolor);
+        width: 100%;
+    }
+        .hero-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 150px;
+            width: 100%;
+        }
+            .hero-card h1{
+                color: white;
+                width: 100%;
+                text-align: center;
+            }
+            .hero-card p {
+                margin: 10px auto;
+                width: 45%;
+                max-width: 100%;
+                min-width: 300px;
+                box-sizing: border-box;
+                text-align: left;
+                display: block;
+                color: white;
+            }
+</style>
+
+<main class="contenedor">
+    <section class="contenido">
+        <div class="hero-card">
+            <h1>¿Quienes somos?</h1>
+            <hr style="border-color: white; width: 50%;">
+            <p>Somos un equipo dedicado a la ciberseguridad, comprometidos en proporcionar información y herramientas para proteger tu privacidad en línea.<br>
+            Nuestra misión es educar y empoderar a los usuarios para que naveguen de manera segura en el mundo digital. Contamos con expertos en el campo de la ciberseguridad que trabajan constantemente para ofrecer contenido actualizado y relevante
+            <br>¡Únete a nosotros en la lucha por un internet más seguro!</p>
+        </div>
+    </section>
+</main>
+
+{% endblock %}
