@@ -1,10 +1,12 @@
 from django.db import models
 
 class Noticia(models.Model):
+    imagen_url = models.URLField(blank=True, null=True)
     titulo = models.CharField(max_length=200)
     contenido = models.TextField()
     fecha_publicacion = models.DateField()
-    imagen_url = models.URLField(blank=True, null=True)
+    fuente = models.TextField(blank=True, null=True)
+    link_noticia = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.titulo

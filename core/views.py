@@ -7,7 +7,8 @@ from .models import Herramienta
 
 def inicio(request):
     inicio = Inicio.objects.all()
-    return render(request, 'core/inicio.html', {'inicio': inicio})
+    herramientas = Herramienta.objects.all()
+    return render(request, 'core/inicio.html', {'inicio': inicio, 'herramientas': herramientas})
 
 def noticias(request):
     noticias = Noticia.objects.order_by('-fecha_publicacion')

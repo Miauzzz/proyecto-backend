@@ -9,6 +9,7 @@
 </head>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 :root {
     --backgroundcolor: #1359c2;
     --color-texto: white;
@@ -85,6 +86,9 @@ body {
             .social-icon:hover {
                 background: #274a7f;
             }
+a{
+    font-family: 'JetBrains Mono', monospace;
+}
 
 </style>
 <body>
@@ -93,7 +97,7 @@ body {
         <div class="container-fluid"> 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> 
             <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11"> 
-                <a class="navbar-brand text-white col-lg-3 me-0" href="#">Cybersec</a> 
+                <a class="navbar-brand text-white col-lg-3 me-0" href="/" style="font-family: 'JetBrains Mono', monospace;">Cybersec</a> 
                 <ul class="navbar-nav col-lg-6 justify-content-lg-center"> 
                     <li class="nav-item"> <a class="nav-link text-white" href="/">Inicio</a> </li> 
                     <li class="nav-item"> <a class="nav-link text-white" href="/noticias">Noticias</a> </li> 
@@ -104,7 +108,7 @@ body {
         </div> 
     </nav>
 
-{% block content %}{% endblock %}
+    {% block content %}{% endblock %}
 
     <!-- Redes sociales - sticky lateral derecho -->
     <div class="social-sticky">
